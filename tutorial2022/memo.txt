@@ -1,0 +1,22 @@
+React Tutorial
+https://ja.reactjs.org/tutorial/tutorial.html
+
+# npx create-react-app my-app
+「my-app」というフォルダにReactのプロジェクトを生成する。
+
+my-app/src配下のファイルを全部消し、
+index.jsとindex.cssだけ残してチュートリアルの指定するもので上書きする。
+
+# npm start
+Reactを起動。
+http://localhost:3000
+をブラウザが開いて作成した画面を開いてくれる。
+React起動中は、ソースコードを書き換えるたびにブラウザがリロードする。
+
+# npm run build
+リリースビルドの作成。
+
+# serve -s build
+ビルドしたものの動作確認。
+
+

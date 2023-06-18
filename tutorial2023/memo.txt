@@ -1,0 +1,56 @@
+React tutorial 2023
+
+https://ja.react.dev/blog/2023/03/16/introducing-react-dev
+2023年3月、reactの新しいtutorialサイトができた。
+これに則ってチュートリアルをやってみる。
+
+以前のと違う点としては、React Hooksが最初から使われている点だ。
+
+https://react.dev
+2023.6時点で英語しかない。
+翻訳しながらトライ。
+
+・クイックスタート
+
+・チュートリアル：Tic-Tac-Toe
+
+チュートリアルのセットアップで、
+CodeSandboxというサイトからソースをダウンロード。
+ダウンロード直後は以下のファイルが並んでいる。
+
+README.md
+package.json
+public/
+src/
+
+以下のフォルダにコピー。以下フォルダに移動。
+~/doc/js/react/tutorial2023/tictactoe
+以下コマンドを実行。
+$ npm install
+
+以下のファイルが並ぶようになった。node_modulesとpacage-lock.jsonが追加されている。
+
+README.md
+node_modules/
+package-lock.json
+package.json
+public/
+src/
+
+以下コマンドを実行。
+$ npm start
+ブラウザを開いたがエラーが出ている。
+
+Failed to compile
+./src/App.js
+  Line 2:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+Search for the keywords to learn more about each error.
+This error occurred during the build time and cannot be dismissed.
+
+
+https://almonta2021blog.com/【react】エラー解決法%E3%80%80react-must-be-in-scope-when-using-jsx-react-react-in-jsx-scope/
+ここによると、App.jsにReactのimport文を追加すればよいとのこと。
+試しに追加してみると、動いた。
+
+
