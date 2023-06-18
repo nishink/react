@@ -11,6 +11,7 @@
   "name": "ljg0t8",
   "description": null,
   "version": "0.0.0",
+  "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
