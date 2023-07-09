@@ -54,3 +54,100 @@ https://almonta2021blog.com/【react】エラー解決法%E3%80%80react-must-be-
 試しに追加してみると、動いた。
 
 
+・反応して考える(Thinking in React)
+
+FilterableProductTable
+フィルタ可能な商品テーブルを作成する。
+果物と野菜の商品データをもとに、名前や在庫有無などの条件で絞り込みができる
+インタラクティブな画面を作る。
+
+ステップ２のアプリをダウンロードし、ローカルで展開。
+~/doc/js/react/tutorial2023/FilterableProductTable
+
+$ npm install
+$ npm start
+
+Failed to compile
+./src/App.js
+  Line 3:   'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 4:   'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 13:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 18:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 19:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 20:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 32:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 38:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 46:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 47:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 48:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 49:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 50:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 53:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 60:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 61:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 62:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 63:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 73:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 74:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 75:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+  Line 90:  'React' must be in scope when using JSX  react/react-in-jsx-scope
+
+Search for the keywords to learn more about each error.
+This error occurred during the build time and cannot be dismissed.
+
+大量のエラーが出た。
+やはりApp.jsにReactのimport文を追加する必要がある。
+import文を追加すると、エラーは消えた。
+この時点では、商品の一覧を表示するだけで、検索や絞り込みはできない。
+
+ステップ３は、何を状態として持つべきかを考えるヒントが書いてある。
+ここでは、検索テキストとチェックボックスの値が状態であると判断している。
+時間の経過とともに変化し、何からも計算できないものを状態としている。
+
+ステップ４は、状態をどのコンポーネントが持つべきかを考えるヒントが書いてある。
+考え方としては次の通り。
+1. 状態を使用するコンポーネントを特定する。
+2. 状態を使用するコンポーネントに共通する親コンポーネントを見つける。
+3. その親コンポーネントが状態を持つ場所である。
+ここでは、商品テーブルと検索欄が状態を使用するコンポーネントで、
+共通の親がフィルタ可能な商品テーブルコンポーネントであるため、
+状態を保つのはフィルタ可能な商品テーブルコンポーネントとなる。
+
+状態をコードに追加する。
+useStateをインポートし、
+フィルタ可能な商品テーブルコンポーネントに状態を追加。
+子コンポーネントに状態を渡す処理を追記。
+この時点ではまだ入力に対する動きは実装していない。
+
+ステップ５
+状態を変更する処理を追加する。
+フィルタ可能な商品テーブルコンポーネントから、
+検索欄コンポーネントへ、検索欄と在庫ありの状態を渡す属性を追加する。
+検索欄コンポーネントで、検索欄と在庫ありの入力欄に変更があったら、
+状態を変更する関数を呼び出す処理を追加する。
+これで完成。
+
+
+インストール
+
+HelloWorldのサンプルが載っているが、ここまでのチュートリアルで十分なのでパス。
+
+
+新しいReactプロジェクトを開始する
+
+npm以外にも、reactプロジェクトを作るためのフレームワークが多数ある。
+Next.js
+Remix
+Gatsby
+Expo
+
+全部を試すのは大変なので、一番よく使いそうなNext.jsだけ触れてみる。
+
+
+
+
+
+
+
+
+
