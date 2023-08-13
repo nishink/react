@@ -143,6 +143,8 @@ Expo
 
 全部を試すのは大変なので、一番よく使いそうなNext.jsだけ触れてみる。
 
+https://nextjs.org/learn/foundations/about-nextjs
+
 
 
 
